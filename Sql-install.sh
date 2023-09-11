@@ -21,8 +21,8 @@ yum install postfix -y
 
 if [ $? -ne 0 ]
 then
-    echo "mysql installation failute.."
+    echo "postfix installation failute.."
     exit 1
 else
-    echo "mysql installation Successful.."
+    echo "postfix installation Successful.."
 fi

@@ -2,9 +2,14 @@
 USER=$(id -u)
 if [ $USER -ne 0 ]
 then   
-    sudo yum install git -y
-else
     echo "You are not root user/ Root user can do this"
-    exit1
-    
+    exit 1
+fi
+
+if [$? -ne 0 ]
+then
+    echo "ERROR: Git Installing Failed"
+    exit 1
+else
+    echo " Git Successfully Installed"
 fi

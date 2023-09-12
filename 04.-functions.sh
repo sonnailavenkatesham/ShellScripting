@@ -2,7 +2,8 @@
 USER=$(id -u)
 if [ $USER -ne 0 ]
 then   
-    echo "You are not root user.. we are adding root and starting git installation"
+    echo "You are not root user.. "
+    echo "we are adding root and starting git installation"
     sudo yum install git -y
 fi
 

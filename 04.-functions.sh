@@ -3,6 +3,7 @@ USER=$(id -u)
 if [ $USER -ne 0 ]
 then   
     echo "You are not root user to install packeges.. "
+    exit 1
 fi
 VALIDATE(){
     if [ $1 -ne 0 ]

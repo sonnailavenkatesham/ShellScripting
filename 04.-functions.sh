@@ -1,7 +1,7 @@
     #!/bin/bash
 DATE=$(date +%D--%T)
 SCRIPT_NAME=$0
-LOG_FILE=/temp/$SCRIPT_NAME-$DATE
+LOG_FILE=/tmp/$SCRIPT_NAME-$DATE.log
 VALIDATE(){
     if [ $1 -ne 0 ]
 then

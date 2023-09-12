@@ -19,10 +19,10 @@ then
     exit 1
 fi
 
-yum install mysql -y &>>$LOG_FILE
+yum install mysql -y &>>$LOGFILE
 VALIDATE $? "mysql"
-yum install git -y &>>$LOG_FILE
-VALIDATE $? "git" &>>$LOG_FILE
-VALIDATE $? "postfix" &>>$LOG_FILE
+yum install git -y &>>$LOGFILE
+VALIDATE $? "git"
+VALIDATE $? "postfix" &>>$LOGFILE
 
 

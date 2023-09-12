@@ -1,7 +1,7 @@
 #!/bin/bash
 USER=$(id -u)
 FILE_NAME=$0
-LOGFILE=/temp/$FILE_NAME.log
+LOGFILE=/tmp/$FILE_NAME.log
 if [ $USER -ne 0 ]
 then
     echo "You are not root user..."

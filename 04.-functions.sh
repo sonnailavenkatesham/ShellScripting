@@ -8,10 +8,10 @@ fi
 VALIDATE(){
     if [ $1 -ne 0 ]
 then
-    echo "Installation..$2..FAILED"
+    echo "$2 Installation....FAILED"
     exit 1
 else
-    echo " Installation.$2 ..SUCCESS..."
+    echo "$2 Installation...SUCCESS..."
 fi
 }
 yum install mysql -y

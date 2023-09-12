@@ -1,11 +1,13 @@
 #!/bin/bash
 USER=$(id -u)
+FILE_NAME=$0
+LOGFILE=/temp/$FILE_NAME.log
 if [ $USER -ne 0 ]
 then
     echo "You are not root user..."
     exit 1
 fi
 
-yum install git -y
-yum install mysql -y
-yum install postfix -y
+yum install git -y &>>$LOGFILE
+yum install mysql -y &>>$LOGFILE
+yum install postfix -y &>>$LOGFILE

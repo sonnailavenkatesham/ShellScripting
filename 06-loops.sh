@@ -5,5 +5,5 @@ N="\e[0m"
 for i in $@
 do
     yum install $i -y
-    echo -e "$R Successfully installed...$N $i"
+    echo -e "$G Successfully installed...$N $i"
 done

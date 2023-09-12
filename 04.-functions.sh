@@ -6,7 +6,7 @@ then
     sudo yum install git -y
 fi
 
-if [$? -ne 0 ]
+if [ $? -ne 0 ]
 then
     echo "ERROR: Git Installing Failed"
     exit 1

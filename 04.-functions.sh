@@ -2,15 +2,22 @@
 USER=$(id -u)
 if [ $USER -ne 0 ]
 then   
-    echo "You are not root user.. "
-    echo "we are adding root and starting git installation"
-    sudo yum install git -y
+    echo "You are not root user to install packeges.. "
 fi
-
-if [ $? -ne 0 ]
+VALIDATE(){
+    if [ $1 -ne 0 ]
 then
-    echo "ERROR: Git Installing Failed"
+    echo "Installation..$2..FAILED"
     exit 1
 else
-    echo " Git Successfully Installed"
+    echo " Installation.$2 ..SUCCESS..."
 fi
+}
+yum install mysql -y
+$VALIDATE $? "mysql"
+yum install git -y
+$VALIDATE $? "git"
+yum install postfix -y
+$VALIDATE $? "postfix"
+
+

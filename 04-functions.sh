@@ -2,7 +2,7 @@
 USER=$(id -u)
 SCRIPT_NAME=$0   
 DATE=$(date +%D--%T)
-LOGFILE=/temp/$SCRIPT_NAME-$DATE.log
+LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 VALIDATE()
 {
 if [ $1 -ne 0 ]

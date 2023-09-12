@@ -3,13 +3,17 @@ USER=$(id -u)
 SCRIPT_NAME=$0   
 DATE=$(date +%F)
 LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
+R="\e[31m"
+G="\e[32m"
+N="\e[0m]"
+
 VALIDATE(){
 if [ $1 -ne 0 ]
 then
-    echo "$2 Installation....FAILED"
+    echo -e "$2 Installation....$R FAILED.. $N"
     exit 1
 else
-    echo "$2 Installation...SUCCESS..."
+    echo -e "$2 Installation...$R SUCCESS...$N"
 fi
 }
 

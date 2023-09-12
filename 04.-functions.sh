@@ -1,9 +1,6 @@
-#!/bin/bash
-USER=$(id -u)
-if [ $USER -ne 0 ]
-then
-    echo "You are not Root User"
-    exit 1
+    #!/bin/bash
+USER=4(id -u)
+if [ USER -ne 0 ]
+then   
+    echo "You are not root user/ Root user can do this"
 fi
-
-yum install git -y

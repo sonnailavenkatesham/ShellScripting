@@ -1,10 +1,7 @@
     #!/bin/bash
-USER=$(id -u)
-if [ $USER -ne 0 ]
-then   
-    echo "You are not root user to install packeges.. "
-    exit 1
-fi
+DATE=$(date +%D--%T)
+SCRIPT_NAME=$0
+LOG_FILE=/temp/$SCRIPT_NAME-$DATE
 VALIDATE(){
     if [ $1 -ne 0 ]
 then
@@ -14,11 +11,17 @@ else
     echo "$2 Installation...SUCCESS..."
 fi
 }
-yum install mysql -y
+USER=$(id -u)
+if [ $USER -ne 0 ]
+then   
+    echo "You are not root user to install packeges.. "
+    exit 1
+fi
+
+yum install mysql -y &>>$LOG_FILE
 VALIDATE $? "mysql"
-yum install git -y
-VALIDATE $? "git"
-yum install postfix -y
-VALIDATE $? "postfix"
+yum install git -y &>>$LOG_FILE
+VALIDATE $? "git" &>>$LOG_FILE
+VALIDATE $? "postfix" &>>$LOG_FILE
 
 

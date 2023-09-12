@@ -1,9 +1,10 @@
     #!/bin/bash
+
+SCRIPT_NAME=$0   
 DATE=$(date +%D--%T)
-SCRIPT_NAME=$0
-LOG_FILE=/tmp/$SCRIPT_NAME-$DATE.log
+LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 VALIDATE(){
-    if [ $1 -ne 0 ]
+if [ $1 -ne 0 ]
 then
     echo "$2 Installation....FAILED"
     exit 1

@@ -6,14 +6,15 @@ Y="\e[33m"
 VALIDATE(){
 if [ $? -ne 0 ]
 then
-    echo -e "$R Installation....FAIDED $N"
+    echo -e "$R Installation..$i..FAIDED $N"
+    exit 1
 else
-    echo -e "$G Installation....SUCCESS $N"
+    echo -e "$G Installation..$i..SUCCESS $N"
 fi
 }
 
 for i in $@
 do
     yum install $i -y
-    VALIDATE $? $id
+    VALIDATE $? $i
 done

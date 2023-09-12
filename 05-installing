@@ -7,7 +7,19 @@ then
     echo "You are not root user..."
     exit 1
 fi
+VALIDATE(){
+if [ $1 -ne 0 ]
+then
+    echo "$2 Installation....FAILED"
+    exit 1
+else
+    echo "$2 Installation...SUCCESS..."
+fi
+}
 
 yum install git -y &>>$LOGFILE
+VALIDATE $? "git"
 yum install mysql -y &>>$LOGFILE
+VALIDATE $? "mysql"
 yum install postfix -y &>>$LOGFILE
+VALIDATE $? "postfix"

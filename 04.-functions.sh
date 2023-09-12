@@ -15,10 +15,10 @@ else
 fi
 }
 yum install mysql -y
-$VALIDATE $? "mysql"
+VALIDATE $? "mysql"
 yum install git -y
-$VALIDATE $? "git"
+VALIDATE $? "git"
 yum install postfix -y
-$VALIDATE $? "postfix"
+VALIDATE $? "postfix"
 
 

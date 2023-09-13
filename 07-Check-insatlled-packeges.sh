@@ -17,11 +17,11 @@ do
 done
 
 
-VALIDATION()
-{
+VALIDATION(){
 if [ $? -ne 0 ]
 then
     echo -e "$R Installation..$2..FAILDED $N"
 else
     echo -e "$G Installation..$2..SUCCESSFUL $N"
+fi
 }

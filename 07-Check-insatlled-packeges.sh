@@ -8,7 +8,7 @@ packege=$(rpm -q git)
 if [ $packege -ne 0 ]
 then
     echo "intalling packeges...."
-    yum install mysql -y
+    yum install mysqll -y
     VALIDATE $? "mysql" 
 else
     echo -e "$Y Already Installed. $N"

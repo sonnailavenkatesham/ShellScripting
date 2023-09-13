@@ -12,7 +12,7 @@ fi
 
 for i in $@
 do 
-    yum install $i
+    yum install $i -y
     VALIDATE @? "$i"
 done
 

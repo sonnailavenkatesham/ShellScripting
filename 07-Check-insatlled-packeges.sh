@@ -3,6 +3,10 @@ R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
+DATE=$(date +%F)
+FILE_NAME=/home/centos/Scriptlogs
+CURRENT_FILE_NAME=$0
+LOGFILE=$FILE_NAME/$CURRENT_FILE_NAME-$DATE.log
 USER=$(id -u)
 if [ $USER -ne 0 ]
 then    
@@ -22,10 +26,10 @@ fi
 
 for i in $@
 do 
-    yum list installed $i
+    yum list installed $i &>>$LOGFILE
     if [ $? -ne 0 ]
     then
-        yum install $i -y
+        yum install $i -y &>>$LOGFILE
         VALIDATE @? "$i"
     else 
         echo -e "$Y $i Already Installed.. $N"

@@ -7,6 +7,7 @@ USER=$(id -u)
 if [ $USER -ne 0 ]
 then    
     echo -e "$R ERROR: You are not root user $N"
+    exit 1
 fi
 
 for i in $@
@@ -16,7 +17,8 @@ do
 done
 
 
-VALIDATION(){
+VALIDATION()
+{
 if [ $? -ne 0 ]
 then
     echo -e "$R Installation..$2..FAILDED $N"

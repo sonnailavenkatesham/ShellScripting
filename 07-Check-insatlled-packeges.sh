@@ -10,18 +10,21 @@ then
     exit 1
 fi
 
-for i in $@
-do 
-    yum install $i -y
-    VALIDATION @? "$i"
-done
-
-
-VALIDATION(){
+VALIDATE(){
 if [ $? -ne 0 ]
 then
     echo -e "$R Installation..$2..FAILDED $N"
+    exit 1
 else
     echo -e "$G Installation..$2..SUCCESSFUL $N"
 fi
 }
+
+for i in $@
+do 
+    yum install $i -y
+    VALIDATE @? "$i"
+done
+
+
+

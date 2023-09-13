@@ -3,17 +3,18 @@ R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
-
-packege=$(rpm -q mysql)
-if [ $packege -ne 0 ]
-then
-    echo "intalling packeges...."
-    yum install mysqll -y
-    VALIDATE $? "mysql" 
-else
-    echo -e "$Y Already Installed. $N"
-    exit 1
+USER=$(id -u)
+if [ $USER -ne 0 ]
+then    
+    echo -e "$R ERROR: You are not root user $N"
 fi
+
+for i in $@
+do 
+    yum install $i
+    VALIDATE @? "$i"
+done
+
 
 VALIDATION(){
 if [ $? -ne 0 ]

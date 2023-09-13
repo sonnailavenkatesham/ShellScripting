@@ -13,7 +13,7 @@ fi
 for i in $@
 do 
     yum install $i -y
-    VALIDATE @? "$i"
+    VALIDATION @? "$i"
 done
 
 

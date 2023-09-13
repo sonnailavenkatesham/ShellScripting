@@ -29,6 +29,7 @@ do
     yum list installed $i &>>$LOGFILE
     if [ $? -ne 0 ]
     then
+        echo "Installing $i Please wait..."
         yum install $i -y &>>$LOGFILE
         VALIDATE @? "$i"
     else 

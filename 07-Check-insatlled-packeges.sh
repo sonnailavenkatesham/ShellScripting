@@ -5,7 +5,6 @@ N="\e[0m"
 Y="\e[33m"
 
 packege=$(rpm -q git)
-INSTALLATION(){
 if [ $packege -ne 0 ]
 then
     echo "intalling packeges...."
@@ -15,7 +14,7 @@ else
     echo -e "$Y Already Installed. $N"
     exit 1
 fi
-}
+
 VALIDATION(){
 if [ $? -ne 0 ]
 then

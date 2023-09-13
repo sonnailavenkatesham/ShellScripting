@@ -30,6 +30,7 @@ do
     else 
         echo -e "$Y $i Already Installed.. $N"
         exit 1
+    fi
 done
 
 

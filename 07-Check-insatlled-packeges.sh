@@ -22,8 +22,14 @@ fi
 
 for i in $@
 do 
-    yum install $i -y
-    VALIDATE @? "$i"
+    yum list installed $i
+    if [ $? -ne 0 ]
+    then
+        yum install $i -y
+        VALIDATE @? "$i"
+    else 
+        echo -e "$Y $i Already Installed.. $N"
+        exit 1
 done
 
 

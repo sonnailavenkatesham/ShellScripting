@@ -4,7 +4,7 @@ G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
 
-packege=$(rpm -q git)
+packege=$(rpm -q mysql)
 if [ $packege -ne 0 ]
 then
     echo "intalling packeges...."

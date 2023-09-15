@@ -23,6 +23,12 @@ VALIDATE(){
 }
 for i in $@
 do
-    yum install $i -y
-    VALIDATE $?
+    yum list install $i
+    if [ $? -ne 0 ]
+    then
+        yum install $i -y
+        VALIDATE $?
+    else
+        echo -e "$Y Already installed..$i"
+    fi
 done

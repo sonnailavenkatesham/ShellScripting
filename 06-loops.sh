@@ -6,7 +6,7 @@ Y="\e[33m"
 DATE=$(date +%F)
 CURRENT_FILE_NAME=$0
 LOGFILE=/tmp/$CURRENT_FILE_NAME-$DATE.log
-for i in {1..10}
+for i in $@
 do 
     echo -e "$R $i $N"
 done

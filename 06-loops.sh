@@ -7,7 +7,7 @@ DATE=$(date +%F)
 CURRENT_FILE_NAME=$0
 LOGFILE=/tmp/$CURRENT_FILE_NAME-$DATE.log
 USERID=$(id -u)
-if[ $USERID -ne 0 ]
+if [ $USERID -ne 0 ]
 then
     echo -e "$R ERROR: You are not a Root User.. $N"
 fi

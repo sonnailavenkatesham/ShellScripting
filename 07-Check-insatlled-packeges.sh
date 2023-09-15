@@ -31,7 +31,7 @@ do
     then
         echo "Installing $i Please wait..."
         yum install $i -y &>>$LOGFILE
-        VALIDATE @? "$i"
+        VALIDATE $@ "$i"
     else 
         echo -e "$Y $i Already Installed.. $N"
     fi

@@ -15,10 +15,10 @@ fi
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo -e "$R Installation..$i..FAILED"
+        echo -e "$R Installation..$i..FAILED $N"
         exit 1
     else 
-        echo -e "$G Installation..$i..SUCCESSFULL"
+        echo -e "$G Installation..$i..SUCCESSFULL $N"
     fi
 }
 for i in $@

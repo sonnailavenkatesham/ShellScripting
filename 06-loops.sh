@@ -8,5 +8,5 @@ CURRENT_FILE_NAME=$0
 LOGFILE=/tmp/$CURRENT_FILE_NAME-$DATE.log
 for i in {1..10}
 do 
-    echo "$i"
+    echo -e "$R $i $N"
 done

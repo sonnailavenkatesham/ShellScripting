@@ -7,6 +7,6 @@ DATE=$(date +%F)
 CURRENT_FILE_NAME=$0
 LOGFILE=/tmp/$CURRENT_FILE_NAME-$DATE.log
 for i in $@
-do 
-    echo -e "$R $i $N"
+do
+    yum install $i -y
 done

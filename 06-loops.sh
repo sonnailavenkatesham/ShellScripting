@@ -9,7 +9,7 @@ LOGFILE=/tmp/$CURRENT_FILE_NAME-$DATE.log
 USERID=$(id -u)
 if [ $USERID -ne 0 ]
 then
-    echo -e "$R ERROR: You are not a Root User.. $N"
+    echo -e "$R ERROR: You are not a Root User try sudo and filename.. $N"
 fi
 
 VALIDATE(){
